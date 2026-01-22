@@ -1,4 +1,7 @@
 import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { SimulatorModule } from './simulator/simulator.module';
+export class AppModule {}
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { BullModule } from '@nestjs/bull';
@@ -32,6 +35,9 @@ import { AuditLogModule } from './audit/audit-log.module';
     ComputeBridgeModule,
     AgentModule,
     AuditLogModule,
+    SimulatorModule
   ],
+  controllers: [AppController],
+
 })
 export class AppModule {}
